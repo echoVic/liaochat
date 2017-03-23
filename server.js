@@ -4,7 +4,8 @@ var express = require('express'),
     io = require('socket.io').listen(server),
     users = [];
 app.use('/', express.static(__dirname + '/www'));
-server.listen(8080);
+// server.listen(8080);
+server.listen(process.env.PORT || 5050);
 console.log('server start');
 
 io.on('connection', function (socket) {
